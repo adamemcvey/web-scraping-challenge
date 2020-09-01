@@ -25,7 +25,7 @@ def scrape():
     html = browser.html
     soup = bs(html, "html.parser")
 
-    featured_image = soup.find_all("a", class_="fancybox")[0]["data-fancybox-href"]
+    featured_image = soup.find_all("a", class_="fancybox")[1]["data-fancybox-href"]
     featured_image_url = "https:/www.jpl.nasa.gov" + featured_image
     mars_data["featured_image_url"] = featured_image_url
 
