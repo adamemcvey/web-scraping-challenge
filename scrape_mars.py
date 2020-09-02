@@ -3,6 +3,10 @@ from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import time
 
+#note that sometimes the app tries to scrape the data from the first website before the page is fully loaded
+#adding time.sleep functions seems to improve the chances that the scraping process runs smoothly, but sometimes an attribute error still occurs
+#where the "nonetype" object has no "text" attribute
+
 def scrape():
 
     mars_data = {}
