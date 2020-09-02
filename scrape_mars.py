@@ -1,6 +1,7 @@
 import pandas as pd
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
+import time
 
 def scrape():
 
@@ -13,11 +14,15 @@ def scrape():
     browser.visit(url)
     html = browser.html
     soup = bs(html, "html.parser")
+    
+    time.sleep(5)
 
     news_title = soup.find_all("div", class_="content_title")[1].text
     mars_data["news_title"] = news_title
+    time.sleep(1)
     news_para = soup.find("div", class_="article_teaser_body").text
     mars_data["news_para"] = news_para
+    time.sleep(1)
 
     url2 = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
     browser.visit(url2)
