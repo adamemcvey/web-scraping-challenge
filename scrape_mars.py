@@ -62,6 +62,7 @@ def scrape():
         hemisphere_image_urls.append(hemisphere)
     
     mars_data["hemisphere_image_urls"] = hemisphere_image_urls
+    hemisphere = {}
     
     browser.quit()
 
